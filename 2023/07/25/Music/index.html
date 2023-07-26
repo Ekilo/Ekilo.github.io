@@ -1,0 +1,478 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN"
+            
+          
+    >
+    <head>
+    <meta charset="utf-8">
+    
+
+    
+
+    
+    <title>
+        网易缓存提取歌曲 |
+        
+        Ekilo的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/v4-font-face.min.css">
+
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="异或缓存从而反译出能直接听的MP3文件只是让歌曲在会员过期后仍然可以听，甚至离线听1234567891011121314151617181920212223242526272829303132333435363738394041424344import osfrom datetime import datetime# 定义要读取的文件夹路径和输出文件夹路径input_folder_path &#x3D; &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网易缓存提取歌曲">
+<meta property="og:url" content="https://ekilo.github.io/2023/07/25/Music/">
+<meta property="og:site_name" content="Ekilo的博客">
+<meta property="og:description" content="异或缓存从而反译出能直接听的MP3文件只是让歌曲在会员过期后仍然可以听，甚至离线听1234567891011121314151617181920212223242526272829303132333435363738394041424344import osfrom datetime import datetime# 定义要读取的文件夹路径和输出文件夹路径input_folder_path &#x3D; &amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-25T15:34:22.532Z">
+<meta property="article:modified_time" content="2023-07-26T01:53:40.883Z">
+<meta property="article:author" content="Ekilo">
+<meta property="article:tag" content="技巧">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/typeface-source-code-pro@1.1.13/index.css">
+
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+    
+    
+    
+    
+    
+<script src="https://unpkg.com/pace-js@1.2.4/pace.min.js"></script>
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/wowjs@1.1.3/css/libs/animate.css">
+
+        
+<script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
+
+        <script>
+          new WOW({
+            offset: 0,
+            mobile: true,
+            live: false
+          }).init();
+        </script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+    
+<div id='loader'>
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="loading-taichi">
+      <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+      <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+      <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+    </svg>
+    </div>
+    <div class="loading-word">少女祈祷中...</div>
+  </div>
+</div>
+</div>
+
+<script>
+  const endLoading = function() {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+  document.getElementById('loader').addEventListener('click', endLoading);
+</script>
+
+
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    
+        <img data-src="/covers/WY.jpg" data-sizes="auto" alt="网易缓存提取歌曲" class="lazyload">
+    
+    <div id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <div id="logo-wrap">
+                
+                    
+                    
+                        <a href="/" id="logo"><h1>网易缓存提取歌曲</h1></a>
+                    
+                
+            </div>
+            
+                
+                
+            
+        </div>
+        <div id="header-inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/about">关于</a>
+                    </span>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ekilo.github.io"></form>
+            </div>
+        </div>
+    </div>
+</header>
+
+            <div id="content" class="outer">
+                <section id="main"><article id="post-Music" class="h-entry article article-type-post"
+         itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date wow slideInLeft">
+    <a href="/2023/07/25/Music/" class="article-date-link">
+        <time datetime="2023-07-25T15:34:22.532Z"
+              itemprop="datePublished">2023-07-25</time>
+    </a>
+</div>
+
+            
+    <div class="article-category wow slideInLeft">
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+    </div>
+
+
+        </div>
+        <div class="hr-line"></div>
+        
+
+        <div class="e-content article-entry" itemprop="articleBody">
+            
+                <h2 id="异或缓存从而反译出能直接听的MP3文件"><a href="#异或缓存从而反译出能直接听的MP3文件" class="headerlink" title="异或缓存从而反译出能直接听的MP3文件"></a>异或缓存从而反译出能直接听的MP3文件</h2><h3 id="只是让歌曲在会员过期后仍然可以听，甚至离线听"><a href="#只是让歌曲在会员过期后仍然可以听，甚至离线听" class="headerlink" title="只是让歌曲在会员过期后仍然可以听，甚至离线听"></a>只是让歌曲在会员过期后仍然可以听，甚至离线听</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义要读取的文件夹路径和输出文件夹路径</span></span><br><span class="line">input_folder_path = <span class="string">&#x27;D:/Software Data/CloudMusic/Cache&#x27;</span></span><br><span class="line">output_folder_path = <span class="string">&#x27;D:/Download&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取文件夹中所有 .uc 后缀文件的路径、大小和日期</span></span><br><span class="line">file_info_list = []</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(input_folder_path):</span><br><span class="line">    <span class="keyword">if</span> file.endswith(<span class="string">&#x27;.uc&#x27;</span>):</span><br><span class="line">        file_path = os.path.join(input_folder_path, file)</span><br><span class="line">        file_size = os.path.getsize(file_path)</span><br><span class="line">        file_time = os.path.getmtime(file_path)</span><br><span class="line">        file_date = datetime.fromtimestamp(file_time).strftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">        file_info_list.append((file_path, file_size, file_time))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对文件信息列表进行排序，先按日期降序排列</span></span><br><span class="line">sorted_file_info_list = <span class="built_in">sorted</span>(file_info_list, key=<span class="keyword">lambda</span> x: -x[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印排序好的文件列表，让用户选择要执行后续操作的文件</span></span><br><span class="line"><span class="keyword">for</span> index, file_info <span class="keyword">in</span> <span class="built_in">enumerate</span>(sorted_file_info_list):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;index+<span class="number">1</span>&#125;</span>. <span class="subst">&#123;os.path.basename(file_info[<span class="number">0</span>])&#125;</span> (<span class="subst">&#123;file_info[<span class="number">1</span>]&#125;</span> bytes, <span class="subst">&#123;datetime.fromtimestamp(file_info[<span class="number">2</span>]).strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)&#125;</span>)&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 让用户选择要执行后续操作的文件</span></span><br><span class="line">selected_file_index = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请选择一个要处理的文件：&#x27;</span>)) - <span class="number">1</span></span><br><span class="line">selected_file_path = sorted_file_info_list[selected_file_index][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取新文件名</span></span><br><span class="line">new_file_name = <span class="built_in">input</span>(<span class="string">&#x27;请输入新文件名：&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取选中文件的内容，并进行异或操作和数据转换</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(selected_file_path, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = f.read()</span><br><span class="line">    processed_data = <span class="built_in">bytearray</span>([b ^ <span class="number">0xA3</span> <span class="keyword">for</span> b <span class="keyword">in</span> data])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将处理后的内容保存为新文件并更改后缀名为 .mp3</span></span><br><span class="line">new_file_name = os.path.splitext(new_file_name)[<span class="number">0</span>] + <span class="string">&#x27;.mp3&#x27;</span></span><br><span class="line">new_file_path = os.path.join(output_folder_path, new_file_name)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(new_file_path, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(processed_data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改文件名</span></span><br><span class="line">os.rename(new_file_path, os.path.join(output_folder_path, new_file_name))</span><br></pre></td></tr></table></figure>
+
+<p>可以通过bat运行…</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -i D:\20947\OneDrive - MSFT\文档\VsCode\Python\缓存转换\main.py</span><br></pre></td></tr></table></figure>
+            
+        </div>
+        <footer class="article-footer">
+            <a data-url="https://ekilo.github.io/2023/07/25/Music/" data-id="clkj4p9o50007tots9qpqfdsg" data-title="网易缓存提取歌曲"
+               class="article-share-link">分享</a>
+            
+            
+            
+            
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
+
+
+        </footer>
+    </div>
+    
+        
+    <nav id="article-nav" class="wow fadeInUp">
+        
+            <div class="article-nav-link-wrap article-nav-link-left">
+                
+                    <img data-src="/covers/MC.jpg" data-sizes="auto" alt="拥有物理模组引擎的我的世界"
+                         class="lazyload">
+                
+                <a href="/2023/07/25/MC/"></a>
+                <div class="article-nav-caption">前一篇</div>
+                <h3 class="article-nav-title">
+                    
+                        拥有物理模组引擎的我的世界
+                    
+                </h3>
+            </div>
+        
+        
+    </nav>
+
+
+    
+</article>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+                
+                    <aside id="sidebar">
+    <div class="sidebar-wrap wow fadeInRight">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Ekilo" class="lazyload">
+            <div class="sidebar-author-name">Ekilo</div>
+            <div class="sidebar-description">联系邮箱yusheng@onek.eu.org</div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">2</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">2</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">5</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://ekilo.github.io itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+        </div>
+    </div>
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></li></ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/MC/" style="font-size: 10px;">MC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">技巧</a> <a href="/tags/%E6%95%B4%E5%90%88%E5%8C%85/" style="font-size: 10px;">整合包</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li></ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+
+                
+            </div>
+            <footer id="footer" class="wow fadeInUp">
+    <div style="width: 100%; overflow: hidden"><div class="footer-line"></div></div>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+            <div>
+                <span class="icon-copyright"></span>
+                2020-2023
+                <span class="footer-info-sep"></span>
+                Ekilo
+            </div>
+            
+                <div>
+                    基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                    Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+                </div>
+            
+            
+                <div>
+                    <span class="icon-brush"></span>
+                    656
+                    &nbsp;|&nbsp;
+                    <span class="icon-coffee"></span>
+                    00:02
+                </div>
+            
+            
+                <div>
+                    <span class="icon-eye"></span>
+                    <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                    &nbsp;|&nbsp;
+                    <span class="icon-user"></span>
+                    <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+        <nav id="mobile-nav">
+    <div class="sidebar-wrap">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Ekilo" class="lazyload">
+            <div class="sidebar-author-name">Ekilo</div>
+            <div class="sidebar-description">联系邮箱yusheng@onek.eu.org</div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">2</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">2</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">5</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://ekilo.github.io itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+        
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
+
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="site-search">
+        <div class="algolia-popup popup">
+            <div class="algolia-search">
+                <span class="algolia-search-input-icon"></span>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+            </div>
+
+            <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+            </div>
+
+            <span class="popup-btn-close"></span>
+        </div>
+    </div>
+    <!-- hexo injector body_end start -->
+<script src="/js/insertHighlight.js"></script>
+<!-- hexo injector body_end end --></body>
+    </html>
+
