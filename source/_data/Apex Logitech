@@ -1,0 +1,17 @@
+function OnEvent(event, arg)
+if (event == "PROFILE_ACTIVATED") then
+EnablePrimaryMouseButtonEvents(true)
+end
+if IsKeyLockOn("CAPSLOCK")then
+if (event == "MOUSE_BUTTON_PRESSED" and arg == 1)then
+if IsMouseButtonPressed(3)then
+repeat
+MoveMouseRelative(-2, 5)
+Sleep(20)
+MoveMouseRelative(2, -2)
+Sleep(10)
+until not IsMouseButtonPressed(1)
+end
+end
+end
+end
