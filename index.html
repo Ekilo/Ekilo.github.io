@@ -25,7 +25,7 @@
     <meta name="description" content="联系邮箱yusheng@onek.eu.org">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ekilo的博客">
-<meta property="og:url" content="https://ekilo.github.io/">
+<meta property="og:url" content="https://ekblog.eu.org/">
 <meta property="og:site_name" content="Ekilo的博客">
 <meta property="og:description" content="联系邮箱yusheng@onek.eu.org">
 <meta property="og:locale" content="zh_CN">
@@ -150,7 +150,7 @@
                 
             </nav>
             <div id="search-form-wrap">
-                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ekilo.github.io"></form>
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ekblog.eu.org"></form>
             </div>
         </div>
     </div>
@@ -158,6 +158,213 @@
 
             <div id="content" class="outer">
                 <section id="main">
+    
+        
+    <div class="post-wrap-left wow fadeInUp">
+        
+            <a class="post-link" href="/2023/08/04/roop/"></a>
+        
+        
+        <div class="post-cover-left">
+            
+                <img data-src="/covers/roop.jpg" data-sizes="auto" alt="ROOP人脸替换" class="lazyload">
+            
+
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-08-04</a>
+                
+                    <a><span class="icon-pencil"></span>558 字</a>
+                
+                
+                    <a><span class="icon-clock"></span>2 分钟</a>
+                
+            </div>
+            <h2 class="post-title">ROOP人脸替换</h2>
+            <article class="post-article">
+                
+                    前言Roop最新版改善了跳闪的问题，脸部处理更加精细，炼丹的效率也提升了约5倍左右，支持多张脸部选择替换。本文简略介绍ROOP的Windows平台下安装配置。
+需要的前置准备
+
+
+环境
+版本
+
+
+
+Python
+3.10.6
+
+
+Git工具
+
+
+
+ffmpeg
+6.0
+
+
+Visual Studio
+2022
+
+
+CUDA
+11.8.0
+
+
+NvidiaGpu
+9系以上
+
+
+开始部署在任意文件夹下（你想要安装的地方）打开cmd，输入以下命令克隆roop项目git clone https://github.com/s0md3v/roop输入”cd root”进入roop文件夹创建虚拟环境pyth
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-right wow fadeInUp">
+        
+            <a class="post-link" href="/2023/08/03/CSGOQ/"></a>
+        
+        <div class="post-cover-right">
+            
+                <img data-src="/covers/MC.jpg" data-sizes="auto" alt="CSGO实现一键Q切刀再切回" class="lazyload">
+            
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-08-03</a>
+                
+                    <a><span class="icon-pencil"></span>301 字</a>
+                
+                
+                    <a><span class="icon-clock"></span>1 分钟</a>
+                
+            </div>
+            <h2 class="post-title">CSGO实现一键Q切刀再切回</h2>
+            <article class="post-article">
+                
+                    CSGO预载指令切枪切刀再切回这个操作很常见，我打狙和在换弹的时候都会切一下刀再快速切回去，但是偶有失误的情况会导致，刀切出去了，但是多按了一下Q，导致致命僵直。下面三条指令就完美的解决了这个问题，无论你是在用什么，只要你按下Q就一定会切刀再切回你上次在用的武器，可谓是非常方便了，再也不会出现因为紧张切刀而造成致命失误的情况了。
+预载指令编辑一下文件添加下面的预载指令盘符:...\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\autoexec.cfg
+123alias +knife slot3alias -knife las
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-left wow fadeInUp">
+        
+            <a class="post-link" href="/2023/07/30/OPENAI/"></a>
+        
+        
+        <div class="post-cover-left">
+            
+                <img data-src="/covers/Chat.png" data-sizes="auto" alt="解决OpenAI分流和透明代理下仍然无法访问" class="lazyload">
+            
+
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-07-30</a>
+                
+                    <a><span class="icon-pencil"></span>326 字</a>
+                
+                
+                    <a><span class="icon-clock"></span>1 分钟</a>
+                
+            </div>
+            <h2 class="post-title">解决OpenAI分流和透明代理下仍然无法访问</h2>
+            <article class="post-article">
+                
+                    当我们在路由器上部署完透明代理或者分流模式下，明明线路支持ChatGPT访问，在V2ray等客户端下也能正常访问，但是在透明代理环境下却无法访问。这个时候，可以尝试以下方法。设置强制代理域名代理域名如下123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354openai.comauth0.comsentry.iohcaptcha.comrecaptcha.netgstatic.comgvt2.comgvt1.comgvt3.commsftconnectt
+                
+            </article>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="post-wrap-right wow fadeInUp">
+        
+            <a class="post-link" href="/2023/07/29/Stable-Diffusion/"></a>
+        
+        <div class="post-cover-right">
+            
+                <img data-src="/covers/Stable-Diffusion.jpg" data-sizes="auto" alt="Stable-Diffusion本地部署！" class="lazyload">
+            
+        </div>
+        <div class="post-info">
+            <div class="post-meta">
+                <a><span class="icon-calendar"></span>2023-07-29</a>
+                
+                    <a><span class="icon-pencil"></span>567 字</a>
+                
+                
+                    <a><span class="icon-clock"></span>2 分钟</a>
+                
+            </div>
+            <h2 class="post-title">Stable-Diffusion本地部署！</h2>
+            <article class="post-article">
+                
+                    Stable-Diffusion AI绘画部署！前言目前AI绘图已经不再是什么新鲜事了，各种网站也层出不穷，但是无一例外这些网站都会或多或少的收取一定的费用。对于白嫖党来说，非常不能忍啊，于是我整合了一些网络上流传的本地部署资源整合在该页面。
+首先得了解AI绘画所需要的配置需求配置需求
+
+
+
+
+推荐最低配置需求
+
+
+
+
+系统环境
+Windows10或更高
+
+
+处理器
+I5-9400或R7 2700x
+
+
+显卡
+1050ti或其它4G以上英伟达显卡
+
+
+内存
+8G
+
+
+硬盘
+60G-SSD&amp;amp;HDD
+
+
+
+
+
+推荐配置需求
+
+
+
+
+系统环境
+Windows10或更高
+
+
+处理器
+I5-94
+                
+            </article>
+        </div>
+    </div>
+
+
     
         
     <div class="post-wrap-left wow fadeInUp">
@@ -175,7 +382,7 @@
             <div class="post-meta">
                 <a><span class="icon-calendar"></span>2023-07-25</a>
                 
-                    <a><span class="icon-pencil"></span>246 字</a>
+                    <a><span class="icon-pencil"></span>263 字</a>
                 
                 
                     <a><span class="icon-clock"></span>1 分钟</a>
@@ -189,7 +396,27 @@
 可以看到图上的水的效果可以说史无前例了，它真正的把流体的效果给放进了MC值得注意的是，这个效果只是个动画，并不是真正的水需要用指令召唤出来这个流体的效果，真的很卡，召唤的时候注意半径和高深
 12/liquids help可以通过这个指令查询到召唤指令
 
-所用到的模组-游戏版本1.20CullLessLeaves前置模组: YetAnotherConfigLib树叶优化模组: CullLessLeaves真实物理引擎模组: Physics Mod Pro光影模组: Iris优化模组: SodiumIris前置模组: f
+所用到的模组-游戏版本1.20
+
+
+模组列表
+出处&amp;amp;下载链接
+
+
+
+CullLessLeaves前置模组
+YetAnotherConfigLib
+
+
+树叶优化模组
+CullLessLeaves
+
+
+真实物理引擎模组
+Physics Mod Pro
+
+
+光影模组
                 
             </article>
         </div>
@@ -211,7 +438,7 @@
             <div class="post-meta">
                 <a><span class="icon-calendar"></span>2023-07-25</a>
                 
-                    <a><span class="icon-pencil"></span>410 字</a>
+                    <a><span class="icon-pencil"></span>408 字</a>
                 
                 
                     <a><span class="icon-clock"></span>1 分钟</a>
@@ -243,15 +470,15 @@
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>文章</div>
-                <div class="sidebar-state-number">2</div>
+                <div class="sidebar-state-number">6</div>
             </div>
             <div class="sidebar-state-category">
                 <div>分类</div>
-                <div class="sidebar-state-number">2</div>
+                <div class="sidebar-state-number">4</div>
             </div>
             <div class="sidebar-state-tag">
                 <div>标签</div>
-                <div class="sidebar-state-number">5</div>
+                <div class="sidebar-state-number">20</div>
             </div>
         </div>
         <div class="sidebar-social">
@@ -288,7 +515,7 @@
     <div class="widget-wrap wow fadeInRight">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">网络技术</a></li></ul>
         </div>
     </div>
 
@@ -298,7 +525,7 @@
     <div class="widget-wrap wow fadeInRight">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MC/" style="font-size: 10px;">MC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">技巧</a> <a href="/tags/%E6%95%B4%E5%90%88%E5%8C%85/" style="font-size: 10px;">整合包</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a>
+            <a href="/tags/AI/" style="font-size: 15px;">AI</a> <a href="/tags/AI%E7%94%9F%E6%88%90/" style="font-size: 15px;">AI生成</a> <a href="/tags/AI%E7%BB%98%E7%94%BB/" style="font-size: 10px;">AI绘画</a> <a href="/tags/Ai/" style="font-size: 10px;">Ai</a> <a href="/tags/CS/" style="font-size: 10px;">CS</a> <a href="/tags/CSGO/" style="font-size: 10px;">CSGO</a> <a href="/tags/Chat-GPT/" style="font-size: 10px;">Chat GPT</a> <a href="/tags/MC/" style="font-size: 10px;">MC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Stable-Diffusion/" style="font-size: 10px;">Stable-Diffusion</a> <a href="/tags/roop/" style="font-size: 10px;">roop</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 20px;">人工智能</a> <a href="/tags/%E5%8F%8D%E6%81%90%E7%B2%BE%E8%8B%B1/" style="font-size: 10px;">反恐精英</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 15px;">技巧</a> <a href="/tags/%E6%8D%A2%E8%84%B8/" style="font-size: 10px;">换脸</a> <a href="/tags/%E6%95%B4%E5%90%88%E5%8C%85/" style="font-size: 10px;">整合包</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">深度计算</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">网络技术</a> <a href="/tags/%E9%A2%84%E6%8C%87%E4%BB%A4/" style="font-size: 10px;">预指令</a>
         </div>
     </div>
 
@@ -308,7 +535,7 @@
     <div class="widget-wrap wow fadeInRight">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li></ul>
         </div>
     </div>
 
@@ -338,10 +565,10 @@
             
                 <div>
                     <span class="icon-brush"></span>
-                    656
+                    2.4k
                     &nbsp;|&nbsp;
                     <span class="icon-coffee"></span>
-                    00:02
+                    00:08
                 </div>
             
             
@@ -368,15 +595,15 @@
         <div class="sidebar-state">
             <div class="sidebar-state-article">
                 <div>文章</div>
-                <div class="sidebar-state-number">2</div>
+                <div class="sidebar-state-number">6</div>
             </div>
             <div class="sidebar-state-category">
                 <div>分类</div>
-                <div class="sidebar-state-number">2</div>
+                <div class="sidebar-state-number">4</div>
             </div>
             <div class="sidebar-state-tag">
                 <div>标签</div>
-                <div class="sidebar-state-number">5</div>
+                <div class="sidebar-state-number">20</div>
             </div>
         </div>
         <div class="sidebar-social">

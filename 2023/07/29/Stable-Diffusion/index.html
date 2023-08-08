@@ -1,0 +1,589 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN"
+            
+          
+    >
+    <head>
+    <meta charset="utf-8">
+    
+
+    
+
+    
+    <title>
+        Stable-Diffusion本地部署！ |
+        
+        Ekilo的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/v4-font-face.min.css">
+
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="Stable-Diffusion AI绘画部署！前言目前AI绘图已经不再是什么新鲜事了，各种网站也层出不穷，但是无一例外这些网站都会或多或少的收取一定的费用。对于白嫖党来说，非常不能忍啊，于是我整合了一些网络上流传的本地部署资源整合在该页面。 首先得了解AI绘画所需要的配置需求配置需求     推荐最低配置需求     系统环境 Windows10或更高   处理器 I5-9400或R7 2700">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stable-Diffusion本地部署！">
+<meta property="og:url" content="https://ekblog.eu.org/2023/07/29/Stable-Diffusion/">
+<meta property="og:site_name" content="Ekilo的博客">
+<meta property="og:description" content="Stable-Diffusion AI绘画部署！前言目前AI绘图已经不再是什么新鲜事了，各种网站也层出不穷，但是无一例外这些网站都会或多或少的收取一定的费用。对于白嫖党来说，非常不能忍啊，于是我整合了一些网络上流传的本地部署资源整合在该页面。 首先得了解AI绘画所需要的配置需求配置需求     推荐最低配置需求     系统环境 Windows10或更高   处理器 I5-9400或R7 2700">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-29T01:18:40.000Z">
+<meta property="article:modified_time" content="2023-08-08T10:21:07.980Z">
+<meta property="article:author" content="Ekilo">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="人工智能">
+<meta property="article:tag" content="Stable-Diffusion">
+<meta property="article:tag" content="AI绘画">
+<meta property="article:tag" content="AI生成">
+<meta name="twitter:card" content="summary">
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/typeface-source-code-pro@1.1.13/index.css">
+
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+    
+    
+    
+    
+    
+<script src="https://unpkg.com/pace-js@1.2.4/pace.min.js"></script>
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/wowjs@1.1.3/css/libs/animate.css">
+
+        
+<script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
+
+        <script>
+          new WOW({
+            offset: 0,
+            mobile: true,
+            live: false
+          }).init();
+        </script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+    
+<div id='loader'>
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="loading-taichi">
+      <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+      <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+      <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+    </svg>
+    </div>
+    <div class="loading-word">少女祈祷中...</div>
+  </div>
+</div>
+</div>
+
+<script>
+  const endLoading = function() {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+  document.getElementById('loader').addEventListener('click', endLoading);
+</script>
+
+
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    
+        <img data-src="/covers/Stable-Diffusion.jpg" data-sizes="auto" alt="Stable-Diffusion本地部署！" class="lazyload">
+    
+    <div id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <div id="logo-wrap">
+                
+                    
+                    
+                        <a href="/" id="logo"><h1>Stable-Diffusion本地部署！</h1></a>
+                    
+                
+            </div>
+            
+                
+                
+            
+        </div>
+        <div id="header-inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/about">关于</a>
+                    </span>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ekblog.eu.org"></form>
+            </div>
+        </div>
+    </div>
+</header>
+
+            <div id="content" class="outer">
+                <section id="main"><article id="post-Stable-Diffusion" class="h-entry article article-type-post"
+         itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date wow slideInLeft">
+    <a href="/2023/07/29/Stable-Diffusion/" class="article-date-link">
+        <time datetime="2023-07-29T01:18:40.000Z"
+              itemprop="datePublished">2023-07-29</time>
+    </a>
+</div>
+
+            
+    <div class="article-category wow slideInLeft">
+        <a class="article-category-link" href="/categories/AI/">AI</a>
+    </div>
+
+
+        </div>
+        <div class="hr-line"></div>
+        
+
+        <div class="e-content article-entry" itemprop="articleBody">
+            
+                <h2 id="Stable-Diffusion-AI绘画部署！"><a href="#Stable-Diffusion-AI绘画部署！" class="headerlink" title="Stable-Diffusion AI绘画部署！"></a>Stable-Diffusion AI绘画部署！</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>目前AI绘图已经不再是什么新鲜事了，各种网站也层出不穷，但是无一例外这些网站都会或多或少的收取一定的费用。对于白嫖党来说，非常不能忍啊，于是我整合了一些网络上流传的本地部署资源整合在该页面。</p>
+<h3 id="首先得了解AI绘画所需要的配置需求"><a href="#首先得了解AI绘画所需要的配置需求" class="headerlink" title="首先得了解AI绘画所需要的配置需求"></a>首先得了解AI绘画所需要的配置需求</h3><li style="text-align:lift; list-style-type:none; font-size:1.8rem;">配置需求</li>
+
+<table>
+<thead>
+<tr>
+<th align="left">推荐最低配置需求</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">系统环境</td>
+<td align="center">Windows10或更高</td>
+</tr>
+<tr>
+<td align="left">处理器</td>
+<td align="center">I5-9400或R7 2700x</td>
+</tr>
+<tr>
+<td align="left">显卡</td>
+<td align="center">1050ti或其它4G以上英伟达显卡</td>
+</tr>
+<tr>
+<td align="left">内存</td>
+<td align="center">8G</td>
+</tr>
+<tr>
+<td align="left">硬盘</td>
+<td align="center">60G-SSD&amp;HDD</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">推荐配置需求</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">系统环境</td>
+<td align="center">Windows10或更高</td>
+</tr>
+<tr>
+<td align="left">处理器</td>
+<td align="center">I5-9400或R7 2700x</td>
+</tr>
+<tr>
+<td align="left">显卡</td>
+<td align="center">1070或其它8G以上英伟达显卡</td>
+</tr>
+<tr>
+<td align="left">内存</td>
+<td align="center">16G或更高</td>
+</tr>
+<tr>
+<td align="left">硬盘</td>
+<td align="center">120G—SSD</td>
+</tr>
+</tbody></table>
+<h4 id="上面并没有写AMD的显卡，这是因为AI绘画需要CUDA，这个只有Nvida的显卡才有，但是AMD也并不是不行-只不过在AMD显卡环境下，需要在Linux里面转译成Nvida的Cuda再运行程序，下面的教程主要针对Windows用户所以不讨论AMD显卡的可行性。"><a href="#上面并没有写AMD的显卡，这是因为AI绘画需要CUDA，这个只有Nvida的显卡才有，但是AMD也并不是不行-只不过在AMD显卡环境下，需要在Linux里面转译成Nvida的Cuda再运行程序，下面的教程主要针对Windows用户所以不讨论AMD显卡的可行性。" class="headerlink" title="上面并没有写AMD的显卡，这是因为AI绘画需要CUDA，这个只有Nvida的显卡才有，但是AMD也并不是不行&#x2F;只不过在AMD显卡环境下，需要在Linux里面转译成Nvida的Cuda再运行程序，下面的教程主要针对Windows用户所以不讨论AMD显卡的可行性。"></a>上面并没有写AMD的显卡，这是因为AI绘画需要CUDA，这个只有Nvida的显卡才有，但是AMD也并不是不行&#x2F;只不过在AMD显卡环境下，需要在Linux里面转译成Nvida的Cuda再运行程序，下面的教程主要针对Windows用户所以不讨论AMD显卡的可行性。</h4><h4 id="当然，纯CPU的方案也是有的，但是效率太低，也不是我本次想说的内容。"><a href="#当然，纯CPU的方案也是有的，但是效率太低，也不是我本次想说的内容。" class="headerlink" title="当然，纯CPU的方案也是有的，但是效率太低，也不是我本次想说的内容。"></a>当然，纯CPU的方案也是有的，但是效率太低，也不是我本次想说的内容。</h4><li style="text-align:lift; list-style-type:none; font-size:1.8rem;">资源下载</li>
+
+
+<table>
+<thead>
+<tr>
+<th align="left">网盘</th>
+<th align="left">下载链接</th>
+<th align="center">出处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">百度网盘 提取码:n519</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1sVmVqA2CGUsZwyRdjoA5Vg">秋叶整合包</a></td>
+<td align="center">来自B站原链接</td>
+</tr>
+<tr>
+<td align="left">OneDrive</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://5lvqv3-my.sharepoint.com/personal/onekilo_5lvqv3_onmicrosoft_com/_layouts/52/download.aspx?share=EQ1HEK2djGFOtu0AKrmmWFUBb6Q44PGFhu7et_argfBw4Q">秋叶整合包</a></td>
+<td align="center">分流</td>
+</tr>
+<tr>
+<td align="left">天翼云盘 访问码:6ib1</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://cloud.189.cn/t/ryAVBjJZviMf">秋叶整合包</a></td>
+<td align="center">分流</td>
+</tr>
+<tr>
+<td align="left">夸克云盘 提取码:284q</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://pan.quark.cn/s/3a32257a7323">秋叶整合包</a></td>
+<td align="center">来自B站原链接</td>
+</tr>
+</tbody></table>
+<p>【sd-webui-aki-v4.2.7z】SHA1 校验码：9d85a1eb6395395b056c177b71cbf1f1cfd65174</p>
+<li style="text-align:center; list-style-type:none; font-size:2rem; color:red; ">分流为较早版本，请注意！</li>
+
+<h2 id="安装-使用教程"><a href="#安装-使用教程" class="headerlink" title="安装&#x2F;使用教程"></a>安装&#x2F;使用教程</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv22661198">快速开始使用</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv22159609">新手最全教程</a><br><a target="_blank" rel="noopener" href="https://space.bilibili.com/12566101">作者频道主页</a><br>引用：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1iM4y1y7oA/?vd_source=00eb067639d541f83934360bd0e8a000">【AI绘画】Stable Diffusion整合包v4.2发布！全新加速 解压即用 防爆显存 三分钟入门AI绘画 ☆可更新 ☆训练 ☆汉化</a><br>PS：网络上太多教程同质化了，本质上就是在讲一模一样的东西，所以我直接搬原作者的视频出来了XD<br>所以如果看到这篇博文，也可以去链接支持一下作者。<br>该文只做资源整合，资源来自互联网，仅供学习参考。</p>
+</blockquote>
+<hr>
+
+            
+        </div>
+        <footer class="article-footer">
+            <a data-url="https://ekblog.eu.org/2023/07/29/Stable-Diffusion/" data-id="clknc8vik0000ksts4f3k1fcy" data-title="Stable-Diffusion本地部署！"
+               class="article-share-link">分享</a>
+            
+            
+            
+            
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI%E7%94%9F%E6%88%90/" rel="tag">AI生成</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI%E7%BB%98%E7%94%BB/" rel="tag">AI绘画</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stable-Diffusion/" rel="tag">Stable-Diffusion</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a></li></ul>
+
+
+        </footer>
+    </div>
+    
+        
+    <nav id="article-nav" class="wow fadeInUp">
+        
+            <div class="article-nav-link-wrap article-nav-link-left">
+                
+                    <img data-src="/covers/Chat.png" data-sizes="auto" alt="解决OpenAI分流和透明代理下仍然无法访问"
+                         class="lazyload">
+                
+                <a href="/2023/07/30/OPENAI/"></a>
+                <div class="article-nav-caption">前一篇</div>
+                <h3 class="article-nav-title">
+                    
+                        解决OpenAI分流和透明代理下仍然无法访问
+                    
+                </h3>
+            </div>
+        
+        
+            <div class="article-nav-link-wrap article-nav-link-right">
+                
+                    <img data-src="/covers/MC.jpg" data-sizes="auto" alt="拥有物理模组引擎的我的世界"
+                         class="lazyload">
+                
+                <a href="/2023/07/25/MC/"></a>
+                <div class="article-nav-caption">后一篇</div>
+                <h3 class="article-nav-title">
+                    
+                        拥有物理模组引擎的我的世界
+                    
+                </h3>
+            </div>
+        
+    </nav>
+
+
+    
+</article>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+                
+                    <aside id="sidebar">
+    <div class="sidebar-wrap wow fadeInRight">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Ekilo" class="lazyload">
+            <div class="sidebar-author-name">Ekilo</div>
+            <div class="sidebar-description">联系邮箱yusheng@onek.eu.org</div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">6</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">4</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">20</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://ekilo.github.io itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+        </div>
+    </div>
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">网络技术</a></li></ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AI/" style="font-size: 15px;">AI</a> <a href="/tags/AI%E7%94%9F%E6%88%90/" style="font-size: 15px;">AI生成</a> <a href="/tags/AI%E7%BB%98%E7%94%BB/" style="font-size: 10px;">AI绘画</a> <a href="/tags/Ai/" style="font-size: 10px;">Ai</a> <a href="/tags/CS/" style="font-size: 10px;">CS</a> <a href="/tags/CSGO/" style="font-size: 10px;">CSGO</a> <a href="/tags/Chat-GPT/" style="font-size: 10px;">Chat GPT</a> <a href="/tags/MC/" style="font-size: 10px;">MC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Stable-Diffusion/" style="font-size: 10px;">Stable-Diffusion</a> <a href="/tags/roop/" style="font-size: 10px;">roop</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 20px;">人工智能</a> <a href="/tags/%E5%8F%8D%E6%81%90%E7%B2%BE%E8%8B%B1/" style="font-size: 10px;">反恐精英</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 15px;">技巧</a> <a href="/tags/%E6%8D%A2%E8%84%B8/" style="font-size: 10px;">换脸</a> <a href="/tags/%E6%95%B4%E5%90%88%E5%8C%85/" style="font-size: 10px;">整合包</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">深度计算</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">网络技术</a> <a href="/tags/%E9%A2%84%E6%8C%87%E4%BB%A4/" style="font-size: 10px;">预指令</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li></ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+
+                
+            </div>
+            <footer id="footer" class="wow fadeInUp">
+    <div style="width: 100%; overflow: hidden"><div class="footer-line"></div></div>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+            <div>
+                <span class="icon-copyright"></span>
+                2020-2023
+                <span class="footer-info-sep"></span>
+                Ekilo
+            </div>
+            
+                <div>
+                    基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                    Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+                </div>
+            
+            
+                <div>
+                    <span class="icon-brush"></span>
+                    2.4k
+                    &nbsp;|&nbsp;
+                    <span class="icon-coffee"></span>
+                    00:08
+                </div>
+            
+            
+                <div>
+                    <span class="icon-eye"></span>
+                    <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                    &nbsp;|&nbsp;
+                    <span class="icon-user"></span>
+                    <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+        <nav id="mobile-nav">
+    <div class="sidebar-wrap">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Ekilo" class="lazyload">
+            <div class="sidebar-author-name">Ekilo</div>
+            <div class="sidebar-description">联系邮箱yusheng@onek.eu.org</div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">6</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">4</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">20</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://ekilo.github.io itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+        
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
+
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="site-search">
+        <div class="algolia-popup popup">
+            <div class="algolia-search">
+                <span class="algolia-search-input-icon"></span>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+            </div>
+
+            <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+            </div>
+
+            <span class="popup-btn-close"></span>
+        </div>
+    </div>
+    <!-- hexo injector body_end start -->
+<script src="/js/insertHighlight.js"></script>
+<!-- hexo injector body_end end --></body>
+    </html>
+
